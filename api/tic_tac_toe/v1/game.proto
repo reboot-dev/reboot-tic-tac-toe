@@ -19,20 +19,19 @@ service GameInterface {
 
 message Game {
   option (rbt.v1alpha1.state) = {};
-  repeated History history = 1;
+  repeated Squares history = 1;
   uint32 current_move = 2;
 }
 
-message History {
+message Squares {
   repeated string squares = 1;
 }
 
-
 message HistoryResponse {
-  History history = 1;
+  repeated Squares history = 1;
 }
 
 message UpdateRequest {
-  History history = 1;
+  repeated Squares history = 1;
   uint32 current_move = 2;
 }

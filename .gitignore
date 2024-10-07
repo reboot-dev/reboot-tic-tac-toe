@@ -1,1 +1,6 @@
 *~
+.rbt/
+node_modules/
+dist/
+api/**/*.ts
+web/src/api/**/*.ts

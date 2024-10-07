@@ -9,8 +9,6 @@ protoc --react=web/src/api
 # handle them (https://github.com/TypeStrong/ts-loader/issues/465).
 protoc --react-extensionless
 
-protoc --boilerplate=backend/src
-
 # Watch if any generated or source files are modified.
 dev run --watch=backend/**/*.ts
 
