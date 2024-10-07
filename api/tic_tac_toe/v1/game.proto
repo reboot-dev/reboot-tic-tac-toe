@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package counter.v1;
+package tic_tac_toe.v1;
 
 import "google/protobuf/empty.proto";
 import "rbt/v1alpha1/options.proto";
@@ -24,12 +24,12 @@ message Game {
 }
 
 message History {
-  repeated string squares = 1 
+  repeated string squares = 1;
 }
 
 
 message HistoryResponse {
-  History history = 1 
+  History history = 1;
 }
 
 message UpdateRequest {
