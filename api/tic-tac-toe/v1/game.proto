@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package counter.v1;
+
+import "google/protobuf/empty.proto";
+import "rbt/v1alpha1/options.proto";
+
+service GameInterface {
+  rpc History(google.protobuf.Empty) returns (HistoryResponse) {
+    option (rbt.v1alpha1.method).reader = {
+    };
+  }
+
+  rpc Update(UpdateRequest) returns (google.protobuf.Empty) {
+    option (rbt.v1alpha1.method).writer = {
+    };
+  }
+}
+
+message Game {
+  option (rbt.v1alpha1.state) = {};
+  repeated History history = 1;
+  uint32 current_move = 2;
+}
+
+message History {
+  repeated string squares = 1 
+}
+
+
+message HistoryResponse {
+  History history = 1 
+}
+
+message UpdateRequest {
+  History history = 1;
+  uint32 current_move = 2;
+}
